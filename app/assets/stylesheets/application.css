@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+    height:  100%;
+    margin: 0em;
+}
+
+.contents {
+    display: flex;
+    min-height: 100%;
+    margin: 2em;
+    margin-top: 0.5em
+}
+
+.main-content {
+    background-color: lemonchiffon;
+    width: 80%;
+    height: 100%;
+    padding: 1em;
+}
+
+.sidebar {
+    background-color:  lightblue;
+    width: 20%;
+    height: 100%;
+    padding: 1.5em;
+}
+
+.cell{
+    margin: 0.25em;
+    border: solid 1px #000000;
+}
+
+.menu{
+    display: flex;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    height: 1em;
+}
+
+.time{
+    width: 50%;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.edit-menu{
+    width: 50%;
+    text-align: right;
+    font-size: 0.8em;
+}
+
+.message{
+    padding-left: 1em;
+    padding-right: 1em;
+}
