@@ -1,0 +1,16 @@
+<h1>Tweets#index</h1>
+<p>Find me in app/views/tweets/index.html.erb</p>
+
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
+
+<% @tweets.each do |tweets| %>
+    <%= tweets.message %><br>
+    <%= ((Time.now-tweets.tdate)/60).floor %>
+    <a>分前</a><br>
+    <%= link_to '編集', "/tweets/#{tweets.id}/edit" %><br>
+    <%= link_to '削除', "/tweets/#{tweets.id}", method: :delete %><br>
+<% end %>
+
+<p><%= link_to 'ツイート', "/tweets/new" %></p>
