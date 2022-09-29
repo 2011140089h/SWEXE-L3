@@ -1,0 +1,12 @@
+<% if @tweets.errors.present? %>
+<ul>
+<% @tweets.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+<%= form_for @tweets, url: {actrion: action} do |f| %>
+    <%= f.label :message,"Message" %>
+    <%= f.text_field :message %>
+    <%= f.submit buttontext %>
+<% end %>

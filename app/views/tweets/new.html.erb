@@ -1,12 +1,1 @@
-<% if @tweets.errors.present? %>
-<ul>
-<% @tweets.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
-<%= form_for @tweets, url: {actrion: :create} do |f| %>
-    <%= f.label :message,"Message" %>
-    <%= f.text_field :message %>
-    <%= f.submit "作成" %>
-<% end %>
+<%= render partial:'form',locals: { action: :create, buttontext: "作成" } %>
