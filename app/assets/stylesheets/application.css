@@ -15,33 +15,36 @@
  */
 
 html {
-    height:  100%;
     margin: 0em;
 }
 
 body{
     margin: 0;
-    height: 100%;
 }
 
 .contents {
     display: flex;
-    height: 100%;
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
 }
 
 .main-content {
     background-color: lemonchiffon;
-    width: 60%;
+    width: 70%;
     padding: 1em;
     padding-top: 2em;
 }
 
+/*sidemenu*/
+
 .sidebar {
     background-color:  lightblue;
-    width: 18%;
+    width: 20%;
     padding: 1.5em;
+}
+
+.sidecontents{
+    position: fixed;
 }
 
 .sidebar-navi{
@@ -72,7 +75,7 @@ body{
     text-decoration: none;
 }
 
-
+/*message*/
 
 .cell{
     margin: 0.25em;
@@ -102,4 +105,21 @@ body{
     width: 80%;
     margin: 1em auto;
     overflow-wrap: break-word;
+}
+
+/*popup*/
+
+.notice-window {
+	width: 90vw;
+	max-width: 380px;
+	height: 240px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
