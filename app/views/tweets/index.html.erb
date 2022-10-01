@@ -10,7 +10,7 @@
 <div class="contents">
     <div class="sidebar">
         <div class="sidecontents">
-            <h1>Twitter<br>Modoki</h1>
+            <%= image_tag "bird_aoitori_bluebird", class: "logo" %>
             <ul class="sidebar-navi">
                 <li><%= link_to 'Home', "#" %></li>
                 <li><%= link_to '話題を検索', "#" %></li>
@@ -20,22 +20,29 @@
                 <li><%= link_to 'プロフィール', "#" %></li>
                 <li><%= link_to 'もっと見る', "#" %></li>
             </ul>
-            <p><%= button_to 'ツイート', "/tweets/new", method: :get %></p>
+            <p><%= button_to 'ツイート', "/tweets/new", method: :get, class: "twwetbutton" %></p>
         </div>
     </div>
 
     <div class="main-content">
         <% @tweets.each do |tweets| %>
             <div class="cell">
-                <div class="menu">
-                    <div class="time"><%= ((Time.now-tweets.tdate)/60).floor %>分前
-                    </div>
-                    <div class="edit-menu">
-                        <%= link_to '編集', "/tweets/#{tweets.id}/edit" , class: "hoge"%>
-                        <%= link_to '削除', "/tweets/#{tweets.id}", class: "hoge", method: :delete %>
-                    </div>
+                <div class="usericon">
+                    <%= image_tag "audience" %>
                 </div>
+                <div class="content">
+                    <div class="menu">
+                        <div class="about">
+                           <div class="username">ユーザー名</div>
+                            <div class="time"><%= ((Time.now-tweets.tdate)/60).floor %>分前</div> 
+                        </div>
+                        <div class="edit-menu">
+                            <%= link_to '編集', "/tweets/#{tweets.id}/edit" %>
+                            <%= link_to '削除', "/tweets/#{tweets.id}", method: :delete %>
+                        </div>
+                    </div>
                 <p class="message"><%= tweets.message %></p>
+                </div>
             </div>
         <% end %>
     </div>
