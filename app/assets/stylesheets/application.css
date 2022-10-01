@@ -26,6 +26,7 @@ body{
     display: flex;
     width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .main-content {
@@ -34,6 +35,7 @@ body{
     width: 70%;
     padding: 1em;
     padding-top: 2em;
+    text-align: left;
 }
 
 /*sidemenu*/
@@ -48,6 +50,7 @@ body{
 .sidecontents{
     width: 240px;
     position: fixed;
+    text-align: left;
 }
 
 .logo{
@@ -88,29 +91,29 @@ body{
 /*button*/
 
 .twwetbutton {
-  background-color: #1d9bf0;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 1em;
-  padding-left: calc(50% - 2em);
-  padding-right: calc(50% - 2em);
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  vertical-align: middle;
+    background-color: #1d9bf0;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1em;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 1em;
+    padding-left: calc(50% - 2em);
+    padding-right: calc(50% - 2em);
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    vertical-align: middle;
     margin-left: auto;
 }
 
@@ -212,4 +215,134 @@ body{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: #fff;
+}
+
+/*input*/
+
+.inputerror{
+    width: 50%;
+	height: 2em;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #f00;
+}
+
+.inputwindow{
+    margin: auto;
+    margin-top: 20%;
+    width: 580px;
+    height: 340px;
+    border: solid 1px #000;
+    border-radius: 1.5em;
+}
+
+.inputwindow .back{
+    margin: 5px;
+    height: 36px;
+    text-align: left;
+}
+.inputwindow .button_to{
+    width: 100%;
+    margin: 0;
+}
+
+.inputwindow .backbutton{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 0 solid transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: normal;
+    text-align: center;
+    font-size: 1.5em;
+    color: #616467;
+    background-color: transparent;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.inputwindow .backbutton:hover{
+    background-color: #eff3f4;
+}
+
+.inputwindow .main{
+    display: flex;
+    height: 294px;
+}
+
+.inputwindow .left{
+    width: 13%;
+    text-align: center;
+}
+
+.inputwindow .left img{
+    width: 65%;
+    border-radius: 50%;
+}
+
+.inputwindow .right{
+    width: 87%;
+    padding-right: 1em;
+    padding-top: 1em;
+    display: flex;
+}
+.inputwindow form{
+    width: 100%;
+}
+
+.inputwindow .input{
+    height: 80%;
+    width: 100%;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.inputwindow .textfield{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize:none;
+    font-size: 2em;
+}
+
+.inputwindow .textfield:focus{
+    border:none;
+    outline: 0;
+}
+
+.inputwindow .buttons{
+    margin: 0.5em;
+    text-align: right;
+}
+
+.inputwindow .submitbutton{
+    background-color: #1d9bf0;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1em;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    width: 150px;
+    height: 2em;
+    overflow: hidden;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    margin: 0;
 }

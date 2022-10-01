@@ -1,12 +1,25 @@
-<% if @tweets.errors.present? %>
-<ul>
-<% @tweets.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
-<%= form_for @tweets, url: {actrion: action} do |f| %>
-    <%= f.label :message,"Message" %>
-    <%= f.text_field :message %>
-    <%= f.submit buttontext %>
-<% end %>
+<div class="contents">
+    <div class="inputerror">
+        <% if @tweets.errors.present? %>
+            <ul>
+                <% @tweets.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+    <div class="inputwindow">
+        <div class="back"><%= button_to '×', "/", method: :get, class: "backbutton" %></div>
+        <div class="main">
+            <div class="left">
+                <%= image_tag "audience" %>
+            </div>
+            <div class="right">
+                <%= form_for @tweets, url: {actrion: action} do |f| %>
+                    <div class="input"><%= f.text_area :message ,class: "textfield"%></div>
+                    <div class="buttons"><%= f.submit buttontext, class: "submitbutton" %></div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
