@@ -16,6 +16,8 @@
 
 html {
     margin: 0em;
+    /*font-family: 'Noto Sans JP', sans-serif;*/
+    font-family: 'BIZ UDPGothic', sans-serif;
 }
 
 body{
@@ -31,7 +33,7 @@ body{
 
 .main-content {
     background-color: white;
-    border-right: 1px solid #f6f6f6;
+    border-right: 2px solid #f6f6f6;
     width: 70%;
     padding: 1em;
     padding-top: 2em;
@@ -41,9 +43,10 @@ body{
 /*sidemenu*/
 
 .sidebar {
-    background-color: white;
-    border-right: 1px solid #f6f6f6;
+    background-color: #fff;
+    border-right: 2px solid #f6f6f6;
     width: 20%;
+    min-width: 290px;
     padding: 1.5em;
 }
 
@@ -119,7 +122,7 @@ body{
 
 .twwetbutton:hover,
 .twwetbutton:focus { 
-  background-color: #0A66C2;
+  background-color: #cfd9de;
   color: #ffffff;
 }
 
