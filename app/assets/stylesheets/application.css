@@ -128,7 +128,7 @@ body{
 
 .twwetbutton:active {
   background: #0A66C2;
-  color: rgb(255, 255, 255, .7);
+  color: rgba(255, 255, 255, .7);
 }
 
 .twwetbutton:disabled { 
