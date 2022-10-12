@@ -13,14 +13,14 @@
             <%= image_tag "bird_aoitori_bluebird.png", class: "logo" %>
             <ul class="sidebar-navi">
                 <li><%= link_to 'Home', "#" %></li>
-                <li><%= link_to '話題を検索', "#" %></li>
+                <li><a>ユーザ名</a></li>
                 <li><%= link_to '通知', "#" %></li>
                 <li><%= link_to 'メッセージ', "#" %></li>
                 <li><%= link_to 'リスト', "#" %></li>
                 <li><%= link_to 'プロフィール', "#" %></li>
-                <li><%= link_to 'もっと見る', "#" %></li>
+                <li><%= link_to 'ログイン', "#" %></li>
             </ul>
-            <p><%= button_to 'ツイートする', "new_tweet_path", method: :get, class: "twwetbutton" %></p>
+            <p><%= button_to 'ツイートする', "new_tweet", method: :get, class: "twwetbutton" %></p>
         </div>
     </div>
 
@@ -37,11 +37,14 @@
                             <div class="time"><%= ((Time.now-tweets.tdate)/60).floor %>分前</div> 
                         </div>
                         <div class="edit-menu">
-                            <%= link_to '編集', "/#{tweets.id}/edit_tweet_path" %>
-                            <%= link_to '削除', "/delete_path/#{tweets.id}", method: :delete %>
+                            <%= link_to '編集', "/#{tweets.id}/edit_tweet" %>
+                            <%= link_to '削除', "/delete/#{tweets.id}", method: :delete %>
                         </div>
                     </div>
                 <p class="message"><%= tweets.message %></p>
+                <div class="reaction">
+                    <%= link_to 'いいね', "/#{tweets.id}/likes" %>
+                </div>
                 </div>
             </div>
         <% end %>

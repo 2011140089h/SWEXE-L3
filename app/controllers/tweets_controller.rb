@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
     @tweets=Tweet.new(message: params[:tweet][:message], tdate: Time.current)
     if @tweets.save
       flash[:notice] = "Tweet success!"
-      redirect_to "/root_path"
+      redirect_to root_path
     else
       render "new"
     end
@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
-    redirect_to "/root_path"
+    redirect_to root_path
 
   end
   
@@ -32,9 +32,13 @@ class TweetsController < ApplicationController
     @tweets=Tweet.find(params[:id])
     if @tweets.update(message: params[:tweet][:message])
       flash[:notice] = "Update success!"
-      redirect_to "/root_path"
+      redirect_to root_path
     else
       render "edit"
     end
   end
+  
+  def login
+  end
+  
 end
