@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   end
   
   def create
-    @tweets=Tweet.new(message: params[:tweet][:message], tdate: Time.current)
+    @tweets=Tweet.new(message: params[:tweet][:message], tdate: Time.current, uid: session[:userid])
     if @tweets.save
       flash[:notice] = "Tweet success!"
       redirect_to root_path
@@ -38,7 +38,14 @@ class TweetsController < ApplicationController
     end
   end
   
-  def login
+  def like
+    User.find_by(uid: session[:userid]).like_tweets << Tweet.find(params[:id])
+    redirect_to root_path
+  end
+  
+  def unlike
+    Tweet.find(params[:id]).likes.find_by(user_id: User.find_by(uid: session[:userid]).id).destroy
+    redirect_to root_path
   end
   
 end

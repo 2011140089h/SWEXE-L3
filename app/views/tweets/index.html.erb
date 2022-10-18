@@ -5,7 +5,11 @@
     </div>
 <% end %>
     
-
+<% if session[:userid] != nil %>
+    <% new_tweet_link = "new_tweet" %>
+<% else %>
+    <% new_tweet_link = "login" %>
+<% end %>
 
 <div class="contents">
     <div class="sidebar">
@@ -13,14 +17,20 @@
             <%= image_tag "bird_aoitori_bluebird.png", class: "logo" %>
             <ul class="sidebar-navi">
                 <li><%= link_to 'Home', "#" %></li>
-                <li><a>ユーザ名</a></li>
+                <li>
+                    <% if session[:userid] != nil %>
+                        <a><%= session[:userid] %></a>
+                    <% else %>
+                        <%= link_to 'ログイン', "login" %>
+                    <% end %>
+                </li>
                 <li><%= link_to '通知', "#" %></li>
                 <li><%= link_to 'メッセージ', "#" %></li>
                 <li><%= link_to 'リスト', "#" %></li>
                 <li><%= link_to 'プロフィール', "#" %></li>
-                <li><%= link_to 'ログイン', "#" %></li>
+                <li><%= link_to 'ログアウト', "logout" %></li>
             </ul>
-            <p><%= button_to 'ツイートする', "new_tweet", method: :get, class: "twwetbutton" %></p>
+            <p><%= button_to 'ツイートする', new_tweet_link, method: :get, class: "twwetbutton" %></p>
         </div>
     </div>
 
@@ -33,7 +43,7 @@
                 <div class="content">
                     <div class="menu">
                         <div class="about">
-                           <div class="username">ユーザー名</div>
+                           <div class="username"><%= tweets.uid.truncate(6) %></div>
                             <div class="time"><%= ((Time.now-tweets.tdate)/60).floor %>分前</div> 
                         </div>
                         <div class="edit-menu">
@@ -42,9 +52,12 @@
                         </div>
                     </div>
                 <p class="message"><%= tweets.message %></p>
+                <% if session[:userid] != nil %>
                 <div class="reaction">
                     <%= link_to 'いいね', "/#{tweets.id}/likes" %>
+                    <%= link_to 'いいね削除', "/#{tweets.id}/unlikes" %>
                 </div>
+                <% end %>
                 </div>
             </div>
         <% end %>

@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   delete "delete/:id"=>"tweets#destroy"
   get ":id/edit_tweet"=>"tweets#edit"
   patch ":id/edit_tweet"=>"tweets#update"
-  get "login"=>"tweets#login"
+  get "login"=>"usermanager#login"
+  get "signin"=>"usermanager#signin"
+  post "signin"=>"usermanager#create_user"
+  post "login"=>"usermanager#checklogin"
+  get "logout"=>"usermanager#logout"
+  get ":id/likes"=>"tweets#like"
+  get ":id/unlikes"=>"tweets#unlike"
 end
 

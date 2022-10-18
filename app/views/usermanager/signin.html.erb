@@ -1,0 +1,17 @@
+<div class="contents">
+    <div class="inputerror">
+        <% if flash[:notice] %>
+            <p><%= flash[:notice] %></p>
+        <% end %>
+    </div>
+    <div class="inputwindow">
+        <p>ユーザ登録</p>
+        <%= form_tag "/signin", method: :post do %>
+            <p><%= label_tag :uid, "ユーザーID" %></p>
+            <p><%= text_field_tag :uid %></p>
+            <p><%= label_tag :pass, "パスワード" %></p>
+            <p><%= password_field_tag :password %></p>
+            <%= submit_tag "登録" %>
+        <% end %>
+    </div>
+</div>
