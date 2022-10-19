@@ -10,7 +10,7 @@ class UsermanagerController < ApplicationController
             return
         end
             
-        @register=User.new(uid: params[:uid], pass: BCrypt::Password.create(params[:password]))
+        @register=User.new(uid: params[:uid], password: params[:password], password_confirmation: params[:password_confirmation])
         
         if @register.save
             flash[:notice]="user create success!"

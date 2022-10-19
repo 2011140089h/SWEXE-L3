@@ -37,15 +37,21 @@ class TweetsController < ApplicationController
       render "edit"
     end
   end
-  
+
   def like
-    User.find_by(uid: session[:userid]).like_tweets << Tweet.find(params[:id])
+    twt=Tweet.find(params[:id])
+    unless twt.islike(current_user)
+      current_user.like_tweets << twt
+    end
     redirect_to root_path
   end
   
   def unlike
-    Tweet.find(params[:id]).likes.find_by(user_id: User.find_by(uid: session[:userid]).id).destroy
+    twt= Tweet.find(params[:id])
+    if twt.islike(current_user)
+      twt.likes.find_by(user_id: current_user.id).destroy
+    end
     redirect_to root_path
   end
-  
+
 end
